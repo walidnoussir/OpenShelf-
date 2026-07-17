@@ -1,9 +1,20 @@
+"use client";
+
 import SearchBar from "../SearchBar";
 
-export default function Header() {
+interface HeaderProps {
+  search?: string;
+  onSearchChange?: (value: string) => void;
+}
+
+export default function Header({ search = "", onSearchChange }: HeaderProps) {
   return (
     <header className="flex h-20 items-center justify-between border-b border-slate-200 bg-white px-8">
-      <SearchBar />
+      {onSearchChange ? (
+        <SearchBar value={search} onChange={onSearchChange} />
+      ) : (
+        <div />
+      )}
 
       <div className="flex items-center gap-4">
         <div className="text-right">

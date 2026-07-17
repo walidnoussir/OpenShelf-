@@ -10,3 +10,13 @@ export interface Book {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface BookFormData {
+  title: string;
+  author: string;
+  isbn: string;
+  category: string;
+  publicationYear: number;
+  description: string;
+  status: "Available" | "Borrowed";
+}
